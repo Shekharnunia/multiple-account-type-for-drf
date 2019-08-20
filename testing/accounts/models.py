@@ -17,7 +17,13 @@ class User(AbstractUser):
     phone = models.CharField(max_length=13)
     date_of_birth = models.DateField(null=True)
     gender = models.CharField(max_length=30)
-    # Address (House Address, City, State, Pincode, Country(India-default) )
+
+    address = models.CharField(max_length=250)
+    city = models.CharField(max_length=30)
+    state = models.CharField(max_length=30)
+    pincode = models.CharField(max_length=10)
+    country = models.CharField(max_length=25, default='India')
+
     is_school_verified = models.BooleanField(default=False)
 
     USERNAME_FIELD = 'email'
